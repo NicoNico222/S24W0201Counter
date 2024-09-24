@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <!-- ******* 이번주에 배운것 : view binding을 배웠다. 연결하는것.
+    xml에서는 sanke case
+    kotlin에서는 camel case를 사용해서 표현한다.(클래스 이름은 pascal case)-->
+
+    <!-- android:orientation="vertical" : 수직으로 만드는것
+     android:orientation="" 을 친다음 ctrl + space 를 누르면 뭘 만들어야 하는지 나온다.-->
+
+    <TextView
+        android:id="@+id/txt_count"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="0"
+        android:textSize="70sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="#ff0"
+        android:padding="20dp"
+        android:layout_margin="30dp"
+        />
+
+    <!-- 코딩할때 id 치면 android:id 가 나온다. 이렇게 코딩하자.
+    textsize를 할때에는 뒤에 sp를 붙여야한다. (폰트 관련된건 sp)
+    dp 는 페딩등에서 사용 (화면을 돌려도 유지한다? -> 한번 찾아보기)
+    layout_gravity는 위치를 선정할 수 있다. (왼쪽,중간,오른쪽 등)
+    layout_는 다른놈과 나의관계
+    layout은 나 혼자-->
+
+    <!-- 시험 나올수도 있는데
+     위 코드에서 layout_gravity 와 gravity의 차이 (즉 layout_ 있는것과 없는것의 차이)
+     즉, 나 자신은 textview
+     부모는 linearlayout이다.
+     텍스트와 부모의 관계를 말할때 layout_가 붙여야 한다.
+     즉, gravity는 나 자신안의 설정
+     layout_gravity는 부모와 나를 맞추라는것이다.-->
+
+    <!--  padding에는 layout_가 없고 margin에는 layout_가 붙어있다.
+    즉 padding은 내꺼 안에서 공간의 차이
+    layout_margin는 나와 바깥의 차이
+    -->
+
+
+<!--  layout_weoght  -->
+
+<!--    기존 증가, 감소 코드-->
+
+<!--    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="증가"
+        />
+
+    <Button
+        android:id="@+id/btn_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="감소"
+        />-->
+
+    <!--  with : 가로길이 / height : 높이
+      match_parent : 자신의 부모에 폭이나 높이를 맞추는 것
+      wrap_content : 폭과 높이가 글자가 꼭 들어갈 정도로 설정-->
+
+
+    <!--여기는 LinearLayout 중첩을 보이는 코드-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="증가"
+            />
+        <Button
+            android:id="@+id/btnSub"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="감소"
+            />
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="초기화"
+        />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        />
+
+</LinearLayout>
